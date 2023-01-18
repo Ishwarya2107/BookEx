@@ -8,7 +8,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 var title1 = '';
 var email_opposite = '';
 var image_opposite = '';
-Map my_images = {};
+
 
 class MainFrontEnd extends StatefulWidget {
   const MainFrontEnd({Key? key}) : super(key: key);
@@ -135,6 +135,7 @@ class displayscreen extends StatelessWidget {
           }
 
           if (snapshot.hasData) {
+
             List<SwipeItem> _swipeItems = <SwipeItem>[];
             QuerySnapshot querySnapshot = snapshot.data;
             List<QueryDocumentSnapshot> documents = querySnapshot.docs;
@@ -149,7 +150,14 @@ class displayscreen extends StatelessWidget {
                       'note': e['note'],
                     })
                 .toList();
-
+            print(items);
+            Map my_images = {};
+            for(int i=0;i<items.length;i++){
+              if(items[i]['email']==user?.email){
+                my_images[items[i]['title']]=items[i]['image'];
+              }
+            }
+            print(my_images);
             for (int i = 0; i < items.length; i++) {
               _swipeItems.add(
                 SwipeItem(
@@ -160,9 +168,9 @@ class displayscreen extends StatelessWidget {
                           builder: (context) {
                             return Center(child: CircularProgressIndicator());
                           });
-                      var my_book = title1;
+                      String my_book = title1;
                       String my_email = email_opposite;
-                      var my_image = image_opposite;
+                      String my_image = image_opposite;
                       Future<void> getdata() async {
                         CollectionReference _reference =
                             FirebaseFirestore.instance.collection('exchange');
@@ -171,6 +179,7 @@ class displayscreen extends StatelessWidget {
                             await _reference.doc(email_opposite).get();
                         var data = snapshot.data() as Map;
                         var liked_books = [];
+
                         var booksdata = data['book_id'];
 
                         var inside_book = booksdata[my_book] as List;
@@ -207,9 +216,12 @@ class displayscreen extends StatelessWidget {
                                       SizedBox(
                                         height: 20,
                                       ),
+
                                       for (var i in liked_books)
+
                                         TextButton(
                                             onPressed: () {
+
                                               Navigator.pushNamed(
                                                   context, '/match',
                                                   arguments: {
@@ -271,6 +283,9 @@ class displayscreen extends StatelessWidget {
                                       for (var i in liked_books)
                                         TextButton(
                                             onPressed: () {
+
+
+
                                               Navigator.pushNamed(
                                                   context, '/match',
                                                   arguments: {
@@ -312,9 +327,6 @@ class displayscreen extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 Map thisItem = items[index];
 
-                if (user?.email == thisItem['email']) {
-                  my_images[thisItem['title']] = thisItem['image'];
-                }
                 if (user?.email != thisItem['email']) {
                   title1 = thisItem['title'];
 
