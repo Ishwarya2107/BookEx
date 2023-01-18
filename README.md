@@ -5,6 +5,7 @@ An Android app that aides the exchange of books with just a swipe.
 ## Author
 
 Ishwarya S - 22N223(B.E CSE(AI&ML))- First year
+
 Team - Android Autocrats
 
 ## Tools Used
@@ -29,6 +30,7 @@ the books for free!
 
 ## Instructions:
 - Try running on a physical device
+- The app loads after some camera initialization errors(for the first time only)
 - Swipe right to like the book
 - Swipe left to dislike the book
 
