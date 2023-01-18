@@ -35,7 +35,7 @@ the books for free!
 ## 🔗 Links
 Check out this link to get a glimpse of my app.
 
-[![Video](https://img.shields.io/badge/BookEx_app-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://drive.google.com/file/d/17mvJcuvYaKTKzxM7HJcTgxoN2ws8TFCQ/view?usp=share_link)
+[![Video](https://img.shields.io/badge/BookEx_app-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://drive.google.com/file/d/17mvJcuvYaKTKzxM7HJcTgxoN2ws8TFCQ/view?usp=sharing)
 
 
 
