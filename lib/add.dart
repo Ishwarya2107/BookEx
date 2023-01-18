@@ -157,7 +157,7 @@ class _AddpageState extends State<Addpage> {
                     fontSize: 16.0
                 );
                 Navigator.pop(context);
-                Navigator.pushNamed(context, '/photo');
+
               },
               child: Text(
                 "Add",
