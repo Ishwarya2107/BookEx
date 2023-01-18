@@ -150,14 +150,14 @@ class displayscreen extends StatelessWidget {
                       'note': e['note'],
                     })
                 .toList();
-            print(items);
+
             Map my_images = {};
             for(int i=0;i<items.length;i++){
               if(items[i]['email']==user?.email){
                 my_images[items[i]['title']]=items[i]['image'];
               }
             }
-            print(my_images);
+
             for (int i = 0; i < items.length; i++) {
               _swipeItems.add(
                 SwipeItem(
@@ -254,7 +254,7 @@ class displayscreen extends StatelessWidget {
                           var data = snapshot.data() as Map;
 
                           var booksdata = data['book_id'] as Map;
-                          var emails = my_email;
+
                           booksdata.forEach(
                             (key, value) => {
                               if (value.contains(my_email))
